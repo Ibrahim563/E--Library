@@ -1,0 +1,48 @@
+body{
+    background-image: url(../img/mainMenu.jpg);
+}
+#RegisterForm{
+
+    position: absolute;
+    top: 20%;
+    left: 37%;
+    
+
+}
+#regParg{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #f11010;
+    background-color: black;
+}
+#RegisterButton{
+
+background-color: dodgerblue;
+    border: none ;
+    border-radius: 50px;
+    height: 40px;
+    width: 21.2em;
+    color: white;
+
+}
+#searchForm{
+    position: absolute;
+    top: 20%;
+    left: 37%;
+}
+#CancelButton{
+    background-color: #f40552;
+    border: none ;
+    border-radius: 50px;
+    height: 40px;
+    width: 21.2em;
+    color: white;
+}
+.formElement{
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #aacfcf;
+    background-color: black;
+    
+}

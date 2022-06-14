@@ -1,0 +1,62 @@
+<?php
+require_once('phhp.php');
+session_destroy();
+if($_POST['submitLogin']){
+    $name=$_POST['usernameLogin'];
+    $password=$_POST['passwordLogin'];
+    $sql="SELECT name,password,role,id FROM student WHERE name='$name' AND password='$password' 
+    UNION SELECT name,password,role,id FROM admin where name='$name' AND password ='$password'";
+    $result=mysqli_query($conn,$sql);
+    $check = mysqli_fetch_assoc($result);
+    if(isset($check)){
+        setcookie('cookie',$check['role'],time()+3600); 
+        session_start();
+        $_SESSION['id'] = $check['id'];
+            if($check['role']==0){
+                header("Location: student.php?name=".urlencode($_POST['usernameLogin']));
+            }
+            else if($check['role']==1){
+                 header("Location: admin.php?name=".urlencode($_POST['usernameLogin']));
+            }
+    }
+   else {
+       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+   }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <title>E-Library</title>
+</head>
+<body>
+    <div id="Login">
+
+        <h1 id="welcome">Welcome to E-library</h1>
+        <p class="introduction">All you need, is in one place</p>
+        <p class="introduction2">Inrish your knowledge</p>
+        <form action="" method="post" id="loginform" >
+            <p class="formElement logParg">Please Enter Your Credentials</p>
+            <label for="usernameLogin" class="formElement">User Name:  </label>
+            <input type="text" name="usernameLogin" >
+            <br><br>
+            <label for="passwordLogin" class="formElement">Password: &nbsp;  </label>
+            <input type="password" name="passwordLogin">
+            <br><br>
+            <input type="submit" id="LoginButton" value="Login" name="submitLogin">
+            <br><br>
+           <a href="RegisterAdmin.php"><input type="button" value="Register As Admin" id="RegisterButton"></a>
+           <br><br> 
+           <a href="RegisterStudent.php"><input type="button" value="Register As a student" id="RegisterButton"></a>
+           
+        
+        </form>
+
+    </div>
+</body>
+</html>

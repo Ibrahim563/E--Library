@@ -1,0 +1,73 @@
+body{
+    background-image: url(../img/mainMenu.jpg);
+}
+#welcomeadmin{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #aacfcf;
+    position: absolute;
+    top: 5%;
+    left: 33%;
+    font-size: 60px ;
+    background-color: black;
+}
+.adminbuttons1{
+
+    background-color: dodgerblue;
+    border: none ;
+    border-radius: 50px;
+    height: 40px;
+    width: 21.2em;
+    color: white;
+    position: absolute;
+    left: 40%;
+    top: 50%;
+}
+.adminbuttons2{
+
+    background-color: dodgerblue;
+    border: none ;
+    border-radius: 50px;
+    height: 40px;
+    width: 21.2em;
+    color: white;
+    position: absolute;
+    left: 40%;
+    top: 58%;
+}
+
+.adminbuttons4{
+
+    background-color: dodgerblue;
+    border: none ;
+    border-radius: 50px;
+    height: 40px;
+    width: 21.2em;
+    color: white;
+    position: absolute;
+    left: 40%;
+    top: 66%;
+}
+.adminbuttons5{
+
+    background-color: dodgerblue;
+    border: none ;
+    border-radius: 50px;
+    height: 40px;
+    width: 21.2em;
+    color: white;
+    position: absolute;
+    left: 40%;
+    top: 76%;
+}
+.adminbuttons6{
+
+    background-color: brown;
+    border: none ;
+    border-radius: 50px;
+    height: 40px;
+    width: 21.2em;
+    color: white;
+    position: absolute;
+    left: 40%;
+    top: 84%;
+}
